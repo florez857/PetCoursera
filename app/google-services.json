@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "35280667685",
+    "firebase_url": "https://prueba-a67a3.firebaseio.com",
+    "project_id": "prueba-a67a3",
+    "storage_bucket": "prueba-a67a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35280667685:android:7a5ab5f3508fb7fa",
+        "android_client_info": {
+          "package_name": "com.example.pc.petcoursera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35280667685-8uolfcpjn659vagd10okpmhnd98slpeb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEaMdylbrWCR0OVMibSRjt3blZQFckMj8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
