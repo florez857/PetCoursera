@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
 
-    tools:context="com.example.pc.petcoursera.MainActivity">
+    tools:context="com.example.pc.petcoursera.MainActivity"
+    >
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
 
     <LinearLayout
         android:layout_centerHorizontal="true"
@@ -39,6 +45,7 @@
             android:layout_gravity="center_horizontal" />
 
         <Button
+           android:theme="@style/boton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Acceder"
@@ -54,7 +61,28 @@
             android:layout_below="@+id/linearLayout"
              />
 
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BotonFlotante"/>
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/swipe"
+            >
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lista"
+
+
+                ></ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 
 </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

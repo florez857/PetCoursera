@@ -1,12 +1,18 @@
 package com.example.pc.petcoursera;
 
 import android.app.ProgressDialog;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
     EditText texto1,texto2;
     FirebaseAuth firebase;
     ProgressDialog dialogo;
+    FloatingActionButton botonFloat;
+
+    //listview
+
+    ListView lista;
+    SwipeRefreshLayout swipe;
+    ArrayAdapter<String> adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +48,39 @@ public class MainActivity extends AppCompatActivity {
         firebase=FirebaseAuth.getInstance();
         dialogo= new ProgressDialog(this);
 
+        String [] datos= new String[6];
+        datos[0]="uno";
+        datos[0]="dos";
+        datos[0]="tres";
+        datos[0]="cuatro";
+        datos[0]="cinco";
+        datos[0]="seis";
+
+        lista=(ListView) findViewById(R.id.lista);
+        adaptador=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,datos);
+        lista.setAdapter(adaptador);
+
+        botonFloat=(FloatingActionButton)findViewById(R.id.BotonFlotante);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registrar();
             }
         });
+         botonFloat.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Snackbar.make(view ,"mensaje mostrado en el snack", Snackbar.LENGTH_LONG)
+                         .setAction("accion", new View.OnClickListener() {
+                             @Override
+                             public void onClick(View view) {
+                                 Log.e("mensaje","snack bar");
+                             }
+                         })
+                         .show();
 
+             }
+         });
 
 
     }
